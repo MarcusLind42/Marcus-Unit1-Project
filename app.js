@@ -45,7 +45,7 @@ console.log(resultMessage);
 init()
 function init() {
   boardSlots = [
-    1, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -55,6 +55,7 @@ function init() {
   playerTurn = 1;
   isWinner = null;
   render();
+  console.log(playerTurn);
 }
 
 function render() {
@@ -69,6 +70,20 @@ function render() {
     }
 
     slots[idx].style.backgroundColor = slotColor
-  })
+  });
+  changeMessage(); 
 }
 
+
+function changeMessage() {
+  if (isWinner === null) {
+    if (playerTurn === 1) resultMessage.textContent = 'Player one\'s turn!'
+    if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!'
+  } else if (isWinner === 'T') {
+    resultMessage.textContent = 'Tie! Select replay to play again!'
+  } else if (isWinner === '1') {
+    resultMessage.textContent = 'PLayer one has won the game!'
+  } else if (isWinner === '-1') {
+    resultMessage.textContent = 'Player two has won the game!'
+  }
+}
