@@ -46,12 +46,12 @@ init();
 function init() {
   // resetBtn.setAttribute('hidden', 'true')
   boardSlots = [
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
     1, -1, null, null, null, null, null,
-    null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null,
   ]
   playerTurn = 1;
   isWinner = null;
