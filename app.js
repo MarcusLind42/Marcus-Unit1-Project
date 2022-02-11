@@ -103,8 +103,4 @@ function changeMessage() {
   }
 }
 
-function getWinner() {
-  // console.log('getWinner will live here');
-}
-
 
