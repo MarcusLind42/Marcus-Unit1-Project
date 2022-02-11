@@ -1,0 +1,45 @@
+// Create section w/ class board w/ 42 divs w/id's 1-42 that represent all the playable connect 4 boardSlots
+// Message 'Player one select a box to begin
+// Message w/ id reset-button to restart game when isWinner!=null
+
+// Define the variables I will need to track the state of the game
+// - isWinner, PlayerTurn, boardSlots
+
+// Store cached element references on the page that will be accessed in code more than once in variables\
+// - slots, resultMessage, resetBtn
+
+// Use an array (boardSquares) to represent playable slots
+
+// USe a turn variable (playerTurn) to track whose turn it is (player 1 = 1, player 2 = -1)
+
+// Call an initialize function to initialize game state variables on load
+// - Iswinner = null, PlayerTurn = 1, boardSlots
+// - reset button (hidden)
+// call render function
+
+// Wait for player to click on a square (maybe add a start game button to pick team if I give it a theme?)
+
+// render function
+// - Use forEach to loop through all slots on board to determine value it should be (null, 1, -1) w/ slots & idx as paramaters
+// - define variable to track slot value slotColor
+// - if (slot === 1) slotColor = 'red'
+// - else if (slot === -1) slotColor = 'blue'
+// - else if (slot === null) slotColor = ''
+// - slots[idx].backgroundColor = slotColor
+
+// Create handleClick function w/ event passed in as paramater
+// index = event target id -1 to track which of the boardSlots is clicked
+// if boardSlot value on the selected index !== null return because it has already been clicked
+// if isWinner value !== null return because we don't want the players to be able to fill in anymore slots if the game is over 
+// Create logic to determine if the slot below the player has been selected besides the first row, if the slot below the one the player selected is !== null, let them play on that index. if the slow below the one the player selected === null return because the player cannot play on a slot above one that doesn't  have a 'chip' in it
+
+// Create changeMessage function to control which message is shown bassed on the playerTurn state and isWinner state
+// if isWinner === null and playerTurn === 1 'Player one's turn'
+// if isWinner === null and playerTurn === -1 message 'Player two's turn'
+// else if isWinner === 'T' 'Tie! Select replay to try again'
+// else if isWinner === 1 message 'Player one has won the game'
+// else if isWinner === -1 message 'Player two has won the game'
+
+// Create getWinner function to loop through boardSlots array with the winningCombos array to check if a player has won the game 
+
+
