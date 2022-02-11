@@ -1,4 +1,4 @@
-// Create section w/ class board w/ 42 divs w/id's 1-42 that represent all the playable connect 4 boardSlots
+// Create section w/ class board w/ 42 divs w/id's 0-41 that represent all the playable connect 4 boardSlots
 // Message 'Player one select a box to begin
 // Message w/ id reset-button to restart game when isWinner!=null
 
