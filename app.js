@@ -83,7 +83,8 @@ function handleClick(event) {
   boardSlots[index] = playerTurn;
   playerTurn = playerTurn * -1;
   
-  console.log(playerTurn);
+  
+  render()
 }
 
 
