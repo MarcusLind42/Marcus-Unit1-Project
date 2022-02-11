@@ -1,5 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-
 const winningCombos = [ 
   [0, 1, 2, 3], [41, 40, 39, 38],[7, 8, 9, 10], 
   [34, 33, 32, 31], [14, 15, 16, 17], [27, 26, 25, 24], 
@@ -25,21 +24,17 @@ const winningCombos = [
   [8, 15, 22, 29], [9, 16, 23, 30], [10, 17, 24, 31], 
   [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34] 
   ];  
-
 /*---------------------------- Variables (state) ----------------------------*/
-
 let isWinner, playerTurn, boardSlots
-
-/*----------------------------- Event Listeners -----------------------------*/
-
+/*------------------------ Cached Element References ------------------------*/
 const slots = document.querySelectorAll('.board > div')
-console.log(slots);
 
 const resultMessage = document.querySelector('#message')
-console.log(resultMessage);
 
 // const resetBtn = document.querySelector('#reset-button')
 // console.log(resetBtn); commenting out until game is working
+/*----------------------------- Event Listeners -----------------------------*/
+
 /*-------------------------------- Functions --------------------------------*/
 
 init()
