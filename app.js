@@ -39,6 +39,7 @@ const resultMessage = document.querySelector('#message')
 
 init()
 function init() {
+  // resetBtn.setAttribute('hidden', 'true')
   boardSlots = [
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -50,7 +51,6 @@ function init() {
   playerTurn = 1;
   isWinner = null;
   render();
-  console.log(playerTurn);
 }
 
 function render() {
@@ -69,6 +69,14 @@ function render() {
   changeMessage(); 
 }
 
+function handleClick(event) {
+  resetBtn.removeAttribute('hidden')
+  let index = event.target.id[event.target.id.length - 1];
+  if (boardSlots[index] !== null) return;
+  if (isWinner !== null) return;
+  boardSlots[index] = playerTurn;
+  playerTurn = playerTurn * -1;
+}
 
 function changeMessage() {
   if (isWinner === null) {
