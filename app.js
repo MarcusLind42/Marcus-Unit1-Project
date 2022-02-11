@@ -35,13 +35,18 @@ const resultMessage = document.querySelector('#message')
 // console.log(resetBtn); commenting out until game is working
 /*----------------------------- Event Listeners -----------------------------*/
 
+slots.forEach(slot => slot.addEventListener('click', function(event) {
+  handleClick(event)
+  console.log('yo');
+}))
+
 /*-------------------------------- Functions --------------------------------*/
 
-init()
+init();
 function init() {
   // resetBtn.setAttribute('hidden', 'true')
   boardSlots = [
-    null, null, null, null, null, null, null,
+    1, -1, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -52,6 +57,8 @@ function init() {
   isWinner = null;
   render();
 }
+console.log(slots);
+console.log(boardSlots);
 
 function render() {
   boardSlots.forEach(function (slot, idx) {
@@ -63,20 +70,24 @@ function render() {
     } else if (slot === null) {
       slotColor = 'white'
     }
-
     slots[idx].style.backgroundColor = slotColor
-  });
+  })
   changeMessage(); 
 }
 
 function handleClick(event) {
-  resetBtn.removeAttribute('hidden')
-  let index = event.target.id[event.target.id.length - 1];
+  // resetBtn.removeAttribute('hidden')
+  let index = event.target.id;
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
   playerTurn = playerTurn * -1;
+  
+  console.log(playerTurn);
 }
+
+
+
 
 function changeMessage() {
   if (isWinner === null) {
@@ -90,3 +101,9 @@ function changeMessage() {
     resultMessage.textContent = 'Player two has won the game!'
   }
 }
+
+function getWinner() {
+  // console.log('getWinner will live here');
+}
+
+
