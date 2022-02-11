@@ -64,9 +64,9 @@ function render() {
   boardSlots.forEach(function (slot, idx) {
     let slotColor
     if (slot === 1) {
-      slotColor = 'red'
+      slotColor = '#f63726'
     } else if (slot === -1) {
-      slotColor = 'yellow'
+      slotColor = '#f9dc01'
     } else if (slot === null) {
       slotColor = 'white'
     }
