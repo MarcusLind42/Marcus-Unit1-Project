@@ -66,7 +66,7 @@ function render() {
     if (slot === 1) {
       slotColor = 'red'
     } else if (slot === -1) {
-      slotColor = 'blue'
+      slotColor = 'yellow'
     } else if (slot === null) {
       slotColor = 'white'
     }

@@ -32,11 +32,14 @@ section.board {
   grid-gap: 0vmin;
   justify-content: center;
   padding-top: 5%;
+  background-color: blue;
 
 }
 
 div {
   border: 1px solid black;
+  border-radius: 50%;
+  
 }
 
 #message {
