@@ -28,7 +28,7 @@ const winningCombos = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let isWinner, playerTurn, boardSquares
+let isWinner, playerTurn, boardSlots
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -41,3 +41,34 @@ console.log(resultMessage);
 // const resetBtn = document.querySelector('#reset-button')
 // console.log(resetBtn); commenting out until game is working
 /*-------------------------------- Functions --------------------------------*/
+
+init()
+function init() {
+  boardSlots = [
+    1, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null,
+  ]
+  playerTurn = 1;
+  isWinner = null;
+  render();
+}
+
+function render() {
+  boardSlots.forEach(function (slot, idx) {
+    let slotColor
+    if (slot === 1) {
+      slotColor = 'red'
+    } else if (slot === -1) {
+      slotColor = 'blue'
+    } else if (slot === null) {
+      slotColor = 'white'
+    }
+
+    slots[idx].style.backgroundColor = slotColor
+  })
+}
+
