@@ -82,9 +82,7 @@ function handleClick(event) {
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
   playerTurn = playerTurn * -1;
-  
-  
-  render()
+  getWinner();
 }
 
 
@@ -103,4 +101,13 @@ function changeMessage() {
   }
 }
 
+function getWinner() {
+  render()
+  winningCombos.forEach(combo => {
+    if(Math.abs(boardSlots[combo[0]] + boardSlots[combo[1]] + boardSlots[combo[2]] + boardSlots[combo[3]]) === 4) {
+      isWinner = boardSlots[combo[0]];
+      changeMessage
+    }
+  })
+}
 

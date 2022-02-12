@@ -1,3 +1,7 @@
+* {
+  border: solid 1px red;
+}
+
 html {
   box-sizing: border-box
 }
@@ -18,30 +22,44 @@ html {
 }
 
 body {
-  background-color: #A9AABC;
+  background-color: #737AAE;
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: 'Fira Sans', sans-serif;
   margin: 0;
-  ;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 nav {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 5px;
   background-color: #B4C8FF;
 }
+
+
+
+/* #settings {
+  margin-left: auto;
+  display: block;
+  justify-content: flex-end;
+}  */
+
+/* #img {
+  display: flex;
+  margin-left: 47%;
+  justify-content: center;
+} */
 
 section.board {
   display: grid;
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 1vmin;
-  padding: 2%;
+  padding: 1%;
   background-color: #0548a4
 }
 
@@ -60,6 +78,6 @@ section > div {
   display: grid;
   justify-content: center;
   font-size: 30px;
-  color: white;
+  color: #FFF7D6
   
 }
