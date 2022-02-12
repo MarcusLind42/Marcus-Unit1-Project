@@ -36,8 +36,7 @@ const resultMessage = document.querySelector('#message')
 /*----------------------------- Event Listeners -----------------------------*/
 
 slots.forEach(slot => slot.addEventListener('click', function(event) {
-  handleClick(event)
-  console.log('yo');
+  handleClick(event);
 }))
 
 /*-------------------------------- Functions --------------------------------*/
@@ -51,14 +50,14 @@ function init() {
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
-    1, -1, null, null, null, null, null,
+    null, null, null, null, null, null, null,
   ]
   playerTurn = 1;
   isWinner = null;
   render();
+  
 }
-console.log(slots);
-console.log(boardSlots);
+
 
 function render() {
   boardSlots.forEach(function (slot, idx) {
@@ -73,6 +72,7 @@ function render() {
     slots[idx].style.backgroundColor = slotColor
   })
   changeMessage(); 
+  console.log(isWinner);
 }
 
 function handleClick(event) {
@@ -95,7 +95,7 @@ function changeMessage() {
   } else if (isWinner === 'T') {
     resultMessage.textContent = 'Tie! Select replay to play again!'
   } else if (isWinner === '1') {
-    resultMessage.textContent = 'PLayer one has won the game!'
+    resultMessage.textContent = 'Payer one has won the game!'
   } else if (isWinner === '-1') {
     resultMessage.textContent = 'Player two has won the game!'
   }
@@ -106,8 +106,13 @@ function getWinner() {
   winningCombos.forEach(combo => {
     if(Math.abs(boardSlots[combo[0]] + boardSlots[combo[1]] + boardSlots[combo[2]] + boardSlots[combo[3]]) === 4) {
       isWinner = boardSlots[combo[0]];
-      changeMessage
+      changeMessage();
     }
   })
+  let tieGame = boardSlots.some(num => num === null)
+  if (tieGame === false && isWinner !== 1 && isWinner !== -1) {
+    isWinner = 'T'
+    changeMessage();
+  }
 }
 
