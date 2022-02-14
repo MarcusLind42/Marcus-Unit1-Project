@@ -30,9 +30,9 @@ let isWinner, playerTurn, boardSlots
 const slots = document.querySelectorAll('.board > div')
 const resultMessage = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-button')
-const goodChime = new Audio('./audio/chime.mp3')
+const goodChime = new Audio('./audio/new-chime.mp3')
 console.log(goodChime);
-const badChime = new Audio('./audio/alert-chime.mp3')
+const badChime = new Audio('./audio/new-alert-chime.mp3')
 console.log(badChime);
 const gameOver = new Audio('./audio/winner.mp3')
 console.log(gameOver);
@@ -87,19 +87,20 @@ function handleClick(event) {
     alert('Please select a playable slot!')
     return;
   }
+  goodChime.play();
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
-  
   boardSlots[index] = playerTurn;
   playerTurn = playerTurn * -1;
-  goodChime.play();
   getWinner();
 }
 
 function changeMessage() {
   if (isWinner === null) {
     if (playerTurn === 1) resultMessage.textContent = 'Player one\'s turn!'
+    
     if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!'
+    
   } else if (isWinner == 'T') {
     resultMessage.textContent = 'Tie! Select replay to play again!'
     resetBtn.removeAttribute('hidden')
