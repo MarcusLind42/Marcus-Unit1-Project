@@ -31,19 +31,20 @@ const slots = document.querySelectorAll('.board > div')
 
 const resultMessage = document.querySelector('#message')
 
-// const resetBtn = document.querySelector('#reset-button')
-// console.log(resetBtn); commenting out until game is working
+const resetBtn = document.querySelector('#reset-button')
 /*----------------------------- Event Listeners -----------------------------*/
 
 slots.forEach(slot => slot.addEventListener('click', function(event) {
   handleClick(event);
 }))
 
+resetBtn.addEventListener('click', () => init())
+
 /*-------------------------------- Functions --------------------------------*/
 
 init();
 function init() {
-  // resetBtn.setAttribute('hidden', 'true')
+  resetBtn.setAttribute('hidden', 'true')
   boardSlots = [
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -53,11 +54,10 @@ function init() {
     null, null, null, null, null, null, null,
   ]
   playerTurn = 1;
-  isWinner = 1;
+  isWinner = null;
   render();
   
 }
-
 
 function render() {
   boardSlots.forEach(function (slot, idx) {
@@ -72,12 +72,12 @@ function render() {
     slots[idx].style.backgroundColor = slotColor
   })
   changeMessage(); 
-  console.log(isWinner);
 }
 
 function handleClick(event) {
   // resetBtn.removeAttribute('hidden')
   let index = event.target.id;
+  if (slots[index + 7].classList.contains('taken'))
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
@@ -112,6 +112,4 @@ function getWinner() {
     changeMessage();
   }
 }
-
-console.log(isWinner);
 
