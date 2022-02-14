@@ -62,14 +62,19 @@ function init() {
 function render() {
   boardSlots.forEach(function (slot, idx) {
     let slotColor
+    let slotClass
     if (slot === 1) {
       slotColor = '#f63726'
+      slotClass = 'taken'
     } else if (slot === -1) {
       slotColor = '#f9dc01'
+      slotClass = 'taken'
     } else if (slot === null) {
       slotColor = 'white'
+      slotClass = ''
     }
     slots[idx].style.backgroundColor = slotColor
+    slots[idx].classList = slotClass
   })
   changeMessage(); 
 }
@@ -77,7 +82,9 @@ function render() {
 function handleClick(event) {
   
   let index = event.target.id;
-  if (index < 35)
+  let index2 = parseInt(event.target.id)
+  // if (slots[index2 + 7].classList.contains('')) return;
+  console.log(slots[index].classList);
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
