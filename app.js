@@ -82,9 +82,11 @@ function render() {
 function handleClick(event) {
   
   let index = event.target.id;
-  let index2 = parseInt(event.target.id)
+  let index2 = slots[index];
   // if (slots[index2 + 7].classList.contains('')) return;
-  console.log(slots[index].classList);
+  // console.log(slots[index2].classList);
+  // console.log(index);
+  console.log(index2);
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
