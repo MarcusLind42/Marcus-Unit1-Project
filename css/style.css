@@ -28,31 +28,30 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 nav {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  height: 80px;
+  font-size: 20px;
   background-color: #B4C8FF;
 }
 
+nav div {
+  width: 100%;
+}
 
+nav div:nth-child(2) {
+  text-align: center;
+  font-weight: bold;
+}
 
-/* #settings {
-  margin-left: auto;
-  display: block;
-  justify-content: flex-end;
-}  */
-
-/* #img {
-  display: flex;
-  margin-left: 47%;
-  justify-content: center;
-} */
+nav div:last-of-type {
+  text-align: right;
+  padding-right: 15px;
+}
 
 section.board {
   display: grid;
@@ -60,7 +59,8 @@ section.board {
   grid-template-columns: repeat(7, 10vmin);
   grid-gap: 1vmin;
   padding: 1%;
-  background-color: #0548a4
+  background-color: #0548a4;
+  justify-content: center;
 }
 
 section > div {

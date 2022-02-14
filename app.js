@@ -53,7 +53,7 @@ function init() {
     null, null, null, null, null, null, null,
   ]
   playerTurn = 1;
-  isWinner = null;
+  isWinner = 1;
   render();
   
 }
@@ -85,18 +85,15 @@ function handleClick(event) {
   getWinner();
 }
 
-
-
-
 function changeMessage() {
   if (isWinner === null) {
     if (playerTurn === 1) resultMessage.textContent = 'Player one\'s turn!'
     if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!'
-  } else if (isWinner === 'T') {
+  } else if (isWinner == 'T') {
     resultMessage.textContent = 'Tie! Select replay to play again!'
-  } else if (isWinner === '1') {
+  } else if (isWinner == '1') {
     resultMessage.textContent = 'Payer one has won the game!'
-  } else if (isWinner === '-1') {
+  } else if (isWinner == '-1') {
     resultMessage.textContent = 'Player two has won the game!'
   }
 }
@@ -115,4 +112,6 @@ function getWinner() {
     changeMessage();
   }
 }
+
+console.log(isWinner);
 
