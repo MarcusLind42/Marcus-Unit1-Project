@@ -30,6 +30,12 @@ let isWinner, playerTurn, boardSlots
 const slots = document.querySelectorAll('.board > div')
 const resultMessage = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-button')
+const goodChime = new Audio('./audio/chime.mp3')
+console.log(goodChime);
+const badChime = new Audio('./audio/alert-chime.mp3')
+console.log(badChime);
+const gameOver = new Audio('./audio/winner.mp3')
+console.log(gameOver);
 /*----------------------------- Event Listeners -----------------------------*/
 slots.forEach(slot => slot.addEventListener('click', function(event) {
   handleClick(event);
@@ -76,13 +82,17 @@ function handleClick(event) {
   let index2 = parseInt(index)
   let slotBelow = index2 + 7
   if (index < 35 && slots[slotBelow].className === '') {
-    alert('Please select a playable slot')
+    badChime.volume = .25
+    badChime.play()
+    alert('Please select a playable slot!')
     return;
   }
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
+  
   boardSlots[index] = playerTurn;
   playerTurn = playerTurn * -1;
+  goodChime.play();
   getWinner();
 }
 
@@ -108,6 +118,8 @@ function getWinner() {
     if(Math.abs(boardSlots[combo[0]] + boardSlots[combo[1]] + boardSlots[combo[2]] + boardSlots[combo[3]]) === 4) {
       isWinner = boardSlots[combo[0]];
       changeMessage();
+      gameOver.volume = .25
+      gameOver.play();
     }
   })
   let tieGame = boardSlots.some(num => num === null)
