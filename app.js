@@ -28,20 +28,14 @@ const winningCombos = [
 let isWinner, playerTurn, boardSlots
 /*------------------------ Cached Element References ------------------------*/
 const slots = document.querySelectorAll('.board > div')
-
 const resultMessage = document.querySelector('#message')
-
 const resetBtn = document.querySelector('#reset-button')
 /*----------------------------- Event Listeners -----------------------------*/
-
 slots.forEach(slot => slot.addEventListener('click', function(event) {
   handleClick(event);
 }))
-
 resetBtn.addEventListener('click', () => init())
-
 /*-------------------------------- Functions --------------------------------*/
-
 init();
 function init() {
   resetBtn.setAttribute('hidden', 'true')
