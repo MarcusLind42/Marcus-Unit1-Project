@@ -96,7 +96,7 @@ function changeMessage() {
     resultMessage.textContent = 'Tie! Select replay to play again!'
     resetBtn.removeAttribute('hidden')
   } else if (isWinner == '1') {
-    resultMessage.textContent = 'Payer one has won the game!'
+    resultMessage.textContent = 'Player one has won the game!'
     resetBtn.removeAttribute('hidden')
   } else if (isWinner == '-1') {
     resultMessage.textContent = 'Player two has won the game!'
