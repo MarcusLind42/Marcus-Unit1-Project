@@ -75,9 +75,9 @@ function render() {
 }
 
 function handleClick(event) {
-  // resetBtn.removeAttribute('hidden')
+  
   let index = event.target.id;
-  if (slots[index + 7].classList.contains('taken'))
+  if (index < 35)
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
@@ -91,10 +91,13 @@ function changeMessage() {
     if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!'
   } else if (isWinner == 'T') {
     resultMessage.textContent = 'Tie! Select replay to play again!'
+    resetBtn.removeAttribute('hidden')
   } else if (isWinner == '1') {
     resultMessage.textContent = 'Payer one has won the game!'
+    resetBtn.removeAttribute('hidden')
   } else if (isWinner == '-1') {
     resultMessage.textContent = 'Player two has won the game!'
+    resetBtn.removeAttribute('hidden')
   }
 }
 
