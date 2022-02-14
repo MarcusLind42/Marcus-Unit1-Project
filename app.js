@@ -30,21 +30,18 @@ let isWinner, playerTurn, boardSlots
 const slots = document.querySelectorAll('.board > div')
 const resultMessage = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-button')
-const goodChime = new Audio('./audio/new-chime.mp3')
-console.log(goodChime);
-const badChime = new Audio('./audio/new-alert-chime.mp3')
-console.log(badChime);
-const gameOver = new Audio('./audio/winner.mp3')
-console.log(gameOver);
+const goodChime = new Audio('./audio/new-chime.mp3');
+const badChime = new Audio('./audio/new-alert-chime.mp3');
+const gameOver = new Audio('./audio/winner.mp3');
 /*----------------------------- Event Listeners -----------------------------*/
 slots.forEach(slot => slot.addEventListener('click', function(event) {
   handleClick(event);
-}))
-resetBtn.addEventListener('click', () => init())
+}));
+resetBtn.addEventListener('click', () => init());
 /*-------------------------------- Functions --------------------------------*/
 init(); 
 function init() {
-  resetBtn.setAttribute('hidden', 'true')
+  resetBtn.setAttribute('hidden', 'true');
   boardSlots = [
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
@@ -52,9 +49,9 @@ function init() {
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null,
-  ]
+  ];
   playerTurn = 1;
-  isWinner = 1;
+  isWinner = null;
   render();
 }
 
@@ -71,20 +68,20 @@ function render() {
       slotColor = 'white'
       slotClass = ''
     }
-    slots[idx].style.backgroundColor = slotColor
-    slots[idx].classList = slotClass
+    slots[idx].style.backgroundColor = slotColor;
+    slots[idx].classList = slotClass;
   })
   changeMessage(); 
-}
+};
 
 function handleClick(event) {
   let index = event.target.id;
-  let index2 = parseInt(index)
+  let index2 = parseInt(index);
   let slotBelow = index2 + 7
   if (index < 35 && slots[slotBelow].className === '') {
     badChime.volume = .25
-    badChime.play()
-    alert('Please select a playable slot!')
+    badChime.play();
+    alert('Please select a playable slot!');
     return;
   }
   goodChime.volume = .25
@@ -98,18 +95,16 @@ function handleClick(event) {
 
 function changeMessage() {
   if (isWinner === null) {
-    if (playerTurn === 1) resultMessage.textContent = 'Player one\'s turn!'
-    
-    if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!'
-    
+    if (playerTurn === 1) resultMessage.textContent = 'Player one\'s turn!';
+    if (playerTurn === -1) resultMessage.textContent = 'Player two\'s turn!';
   } else if (isWinner == 'T') {
-    resultMessage.textContent = 'Tie! Select replay to play again!'
-    resetBtn.removeAttribute('hidden')
+    resultMessage.textContent = 'Tie! Select replay to play again!';
+    resetBtn.removeAttribute('hidden');
   } else if (isWinner == '1') {
-    resultMessage.textContent = 'Player one has won the game!'
+    resultMessage.textContent = 'Player one has won the game!';
     resetBtn.removeAttribute('hidden')
   } else if (isWinner == '-1') {
-    resultMessage.textContent = 'Player two has won the game!'
+    resultMessage.textContent = 'Player two has won the game!';
     resetBtn.removeAttribute('hidden')
   }
 }
