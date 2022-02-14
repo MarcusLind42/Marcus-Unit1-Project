@@ -50,13 +50,11 @@ function init() {
   playerTurn = 1;
   isWinner = null;
   render();
-  
 }
 
 function render() {
   boardSlots.forEach(function (slot, idx) {
-    let slotColor
-    let slotClass
+    let slotColor, slotClass
     if (slot === 1) {
       slotColor = '#f63726'
       slotClass = 'taken'
