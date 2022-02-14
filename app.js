@@ -80,12 +80,13 @@ function render() {
 }
 
 function handleClick(event) {
-  
   let index = event.target.id;
-  let index2 = slots[index].classList;
-  // if (slots[index2 + 7].classList.contains('')) return;
-  console.log(index);
-  console.log(index2);
+  let index2 = parseInt(index)
+  let slotBelow = index2 + 7
+  if (index < 35 && slots[slotBelow].className === '') {
+    alert('Please select a playable slot')
+    return;
+  }
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
   boardSlots[index] = playerTurn;
