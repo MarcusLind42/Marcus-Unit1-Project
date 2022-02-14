@@ -35,6 +35,13 @@ body {
   color: #FFF7D6
 }
 
+#reset-button {
+  padding: 1% 1% 1% 1%;
+  margin: 1%;
+  font-family: 'Fira Sans', sans-serif;
+  
+}
+
 section.board {
   display: grid;
   grid-template-rows: repeat(6, 10vmin);

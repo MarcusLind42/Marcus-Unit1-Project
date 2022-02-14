@@ -54,7 +54,7 @@ function init() {
     null, null, null, null, null, null, null,
   ]
   playerTurn = 1;
-  isWinner = null;
+  isWinner = 1;
   render();
 }
 
