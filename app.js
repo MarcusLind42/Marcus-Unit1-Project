@@ -42,7 +42,7 @@ slots.forEach(slot => slot.addEventListener('click', function(event) {
 }))
 resetBtn.addEventListener('click', () => init())
 /*-------------------------------- Functions --------------------------------*/
-init();
+init(); 
 function init() {
   resetBtn.setAttribute('hidden', 'true')
   boardSlots = [
@@ -87,6 +87,7 @@ function handleClick(event) {
     alert('Please select a playable slot!')
     return;
   }
+  goodChime.volume = .25
   goodChime.play();
   if (boardSlots[index] !== null) return;
   if (isWinner !== null) return;
@@ -127,6 +128,8 @@ function getWinner() {
   if (tieGame === false && isWinner !== 1 && isWinner !== -1) {
     isWinner = 'T'
     changeMessage();
+    gameOver.volume = .25
+    gameOver.play();
   }
 }
 
