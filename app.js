@@ -32,7 +32,7 @@ const resultMessage = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-button')
 const goodChime = new Audio('./audio/new-chime.mp3');
 const badChime = new Audio('./audio/new-alert-chime.mp3');
-const gameOver = new Audio('./audio/winner.mp3');
+const gameOver = new Audio('./audio/new-winner.mp3');
 /*----------------------------- Event Listeners -----------------------------*/
 slots.forEach(slot => slot.addEventListener('click', function(event) {
   handleClick(event);
