@@ -28,7 +28,7 @@ body {
 }
 
 #message {
-  margin: 2.5% 0 1% 0;
+  margin: 3.5% 0 1% 0;
   display: grid;
   justify-content: center;
   font-size: 35px;
