@@ -2,24 +2,18 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
+*, 
+*::before, 
+*::after { 
   box-sizing: inherit;
 }
 
-/* resets font size to be 62.5% of the user preference - 
-   in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%
 }
 
 body {
   background-color: #737AAE;
-/* Use a system font, if none are available use an available sans-sarif   font */
   font-family: 'Fira Sans', sans-serif;
   margin: 0;
   display: flex;
@@ -37,7 +31,7 @@ body {
 
 #reset-button {
   padding: .5%;
-  margin: 1%;
+  margin: 0% 0% 1% 0%;
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -49,7 +43,7 @@ section.board {
   padding: 1.5%;
   background-color: #0548a4;
   justify-content: center;
-  border-radius: 5%;
+  border-radius: 5% 5% 1% 1%;
 }
 
 section > div {
