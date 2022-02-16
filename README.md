@@ -20,7 +20,7 @@
 - CSS
 
   **Icebox**
-  - Themed game (Marvel, Toy Story, Star wars)
-  - Confetti upon game win
-  - Timed play mode
+- Themed game (Marvel, Toy Story, Star wars)
+- Confetti upon game win
+- Timed play mode
 
