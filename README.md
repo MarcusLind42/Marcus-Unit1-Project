@@ -8,4 +8,4 @@
 3. When a player wins or there is a tie, select reset to play again.
 
 
-![loaded game] (https://i.imgur.com/iM5UrQl.png)
+![loaded game](https://i.imgur.com/iM5UrQl.png)
