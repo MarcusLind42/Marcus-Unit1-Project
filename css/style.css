@@ -45,3 +45,16 @@ section > div {
 .board > div {
   border: solid 2px black;
 }
+
+@media only screen and (max-width: 700px) {
+
+  body {
+    display: flex;
+  }
+  
+  #message {
+    display: flex;
+    margin: 35% 5% 0% 5%;
+    font-size: 25px;
+  }
+}
