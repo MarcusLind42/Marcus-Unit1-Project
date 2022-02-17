@@ -1,6 +1,6 @@
 # Connect 4 
 
-## https://clever-khorana-5dbcfa.netlify.app/
+## [Click here to play!](https://clever-khorana-5dbcfa.netlify.app/)
 
 ## Instructions
 1. Select any slot on the bottom row to begin the game.
@@ -20,9 +20,11 @@ Game over
 - Javascript
 - HTML
 - CSS
+- CI/CD
 
-## Icebox
+## Next Steps
+- Add gravity functionality
 - Themed game (Marvel, Toy Story, Star wars)
-- Confetti upon game win
+- Confetti animation upon game win
 - Timed play mode
 
