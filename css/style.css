@@ -54,7 +54,7 @@ section > div {
   
   #message {
     display: flex;
-    margin: 35% 5% 0% 5%;
+    margin: 30% 5% 0% 5%;
     font-size: 25px;
   }
 }
