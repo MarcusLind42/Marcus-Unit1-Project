@@ -104,7 +104,7 @@ function init() {
 
 function render() {
 	boardSlots.forEach(function(slot, idx) {
-		let slotColor, slotClass, classColor
+		let slotColor, slotClass
 		if (slot === 1) {
 			slotColor = '#f63726'
 			slotClass = 'taken'
@@ -113,6 +113,7 @@ function render() {
 			slotClass = 'taken'
 		} else if (slot === null) {
 			slotClass = ''
+			slotColor = 'white'
 		}
 		slots[idx].style.backgroundColor = slotColor;
 		slots[idx].classList = slotClass;
