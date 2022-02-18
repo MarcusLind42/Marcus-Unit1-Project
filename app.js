@@ -99,6 +99,9 @@ function init() {
 	];
 	playerTurn = 1;
 	isWinner = null;
+	boardSlots.forEach(function (slot, idx) {
+		slots[idx].style.backgroundColor = ''
+	})
 	render();
 };
 
@@ -113,7 +116,6 @@ function render() {
 			slotClass = 'taken'
 		} else if (slot === null) {
 			slotClass = ''
-			slotColor = 'white'
 		}
 		slots[idx].style.backgroundColor = slotColor;
 		slots[idx].classList = slotClass;
