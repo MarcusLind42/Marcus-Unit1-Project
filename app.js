@@ -116,7 +116,6 @@ function render() {
 		}
 		slots[idx].style.backgroundColor = slotColor;
 		slots[idx].classList = slotClass;
-		slots[idx].classList = classColor
 	})
 	changeMessage();
 };
