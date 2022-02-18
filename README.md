@@ -20,7 +20,7 @@
 - Javascript
 - HTML
 - CSS
-- CI/CD
+- Netlify
 
 ## Next Steps
 - Add gravity functionality
