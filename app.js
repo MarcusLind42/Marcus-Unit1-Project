@@ -100,11 +100,11 @@ function init() {
 	playerTurn = 1;
 	isWinner = null;
 	render();
-}
+};
 
 function render() {
 	boardSlots.forEach(function(slot, idx) {
-		let slotColor, slotClass
+		let slotColor, slotClass, classColor
 		if (slot === 1) {
 			slotColor = '#f63726'
 			slotClass = 'taken'
@@ -112,11 +112,11 @@ function render() {
 			slotColor = '#f9dc01'
 			slotClass = 'taken'
 		} else if (slot === null) {
-			slotColor = 'white'
 			slotClass = ''
 		}
 		slots[idx].style.backgroundColor = slotColor;
 		slots[idx].classList = slotClass;
+		slots[idx].classList = classColor
 	})
 	changeMessage();
 };
@@ -138,7 +138,7 @@ function handleClick(event) {
 	boardSlots[index] = playerTurn;
 	playerTurn = playerTurn * -1;
 	getWinner();
-}
+};
 
 function changeMessage() {
 	if (isWinner === null) {
@@ -149,12 +149,12 @@ function changeMessage() {
 		resetBtn.removeAttribute('hidden');
 	} else if (isWinner == '1') {
 		resultMessage.textContent = 'Player one has won the game!';
-		resetBtn.removeAttribute('hidden')
+		resetBtn.removeAttribute('hidden');
 	} else if (isWinner == '-1') {
 		resultMessage.textContent = 'Player two has won the game!';
-		resetBtn.removeAttribute('hidden')
+		resetBtn.removeAttribute('hidden');
 	}
-}
+};
 
 function getWinner() {
 	render()
@@ -162,7 +162,7 @@ function getWinner() {
 		if (Math.abs(boardSlots[combo[0]] + boardSlots[combo[1]] + boardSlots[combo[2]] + boardSlots[combo[3]]) === 4) {
 			isWinner = boardSlots[combo[0]];
 			changeMessage();
-			gameOver.volume = .25
+			gameOver.volume = .25;
 			gameOver.play();
 		}
 	})
@@ -170,8 +170,8 @@ function getWinner() {
 	if (tieGame === false && isWinner !== 1 && isWinner !== -1) {
 		isWinner = 'T'
 		changeMessage();
-		gameOver.volume = .25
+		gameOver.volume = .25;
 		gameOver.play();
 	}
-}
+};
 

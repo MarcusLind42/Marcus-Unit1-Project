@@ -41,9 +41,13 @@ section.board {
 }
 section > div {
   border-radius: 50%;
-}
-.board > div {
   border: solid 2px black;
+  background-color: white;
+}
+
+section div:hover {
+  background: gray;
+  transition: all .25s ease;
 }
 
 @media only screen and (max-width: 700px) {
